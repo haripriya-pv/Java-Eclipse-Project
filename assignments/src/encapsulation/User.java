@@ -15,7 +15,15 @@ public class User extends Bank{
 		int pin = sc.nextInt();
 		User obj = new User();
 		obj.setPin(pin);
-		obj.validatePin();
+		if(obj.validatePin()) {
+			System.out.println("valid pin");
+			System.out.println("Enter the withdrawal amount");
+			double amount = sc.nextDouble();
+			System.out.println("Withdrawal successful, You have withdrawn ruppees "+amount);
+		}
+		else
+			System.out.println("invalid pin");
+		
 	}
 
 }
