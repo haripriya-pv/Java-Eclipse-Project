@@ -19,7 +19,7 @@ public class ReadExcelDemo {
 	//creating workbook instance that refers to .xls file  
 	XSSFWorkbook wb=new XSSFWorkbook(fis);   
 	//creating a Sheet object to retrieve the object  
-	XSSFSheet sheet=wb.getSheetAt(0);  //or "sheet1"
+	XSSFSheet sheet=wb.getSheetAt(0);  //or "sheet1" or sheet name
 	//evaluating cell type   
 	
 	for(Row row: sheet)     //iteration over row using for each loop  
