@@ -13,14 +13,15 @@ public class ReadExcelDemo {
 	
 	public static void main(String args[]) throws IOException  
 	{  
-	//obtaining input bytes from a file  
-	FileInputStream fis=new FileInputStream(new File("C:\\demo\\student.xlsx"));  
+	//obtaining input bytes from a file 
+	File f=	new File("C:\\demo\\student.xlsx");
+	FileInputStream fis=new FileInputStream(f);  
 	//creating workbook instance that refers to .xls file  
 	XSSFWorkbook wb=new XSSFWorkbook(fis);   
 	//creating a Sheet object to retrieve the object  
-	XSSFSheet sheet=wb.getSheetAt(0);  
+	XSSFSheet sheet=wb.getSheetAt(0);  //or "sheet1"
 	//evaluating cell type   
-	FormulaEvaluator formulaEvaluator=wb.getCreationHelper().createFormulaEvaluator();  
+	
 	for(Row row: sheet)     //iteration over row using for each loop  
 	{  
 	for(Cell cell: row)    //iteration over cell using for each loop  
@@ -36,7 +37,7 @@ public class ReadExcelDemo {
 ////	System.out.print(cell.getStringCellValue()+ "\t\t");  
 ////	break;  
 //	}  
-		System.out.println(cell);
+		System.out.print(cell);
 	}  
 	System.out.println();  
 	}  
